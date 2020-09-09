@@ -14,16 +14,16 @@ public class SingleLinkedList {
 
     public void addSort(Node node) throws Exception {
         Node temp = first;
-//        System.out.println(first);
         while (temp.getNext() != null) {
             if (temp.getNext().getId() > node.getId()) {
+                //找到元素
                 break;
             } else if (temp.getNext().getId() == node.getId()) {
                 throw new Exception("数据重复");
             }
             temp = temp.getNext();
-            System.out.println(first);
         }
+        //设置指向
         node.setNext(temp.getNext());
         temp.setNext(node);
     }
@@ -47,10 +47,7 @@ public class SingleLinkedList {
         }
 
         Node temp = first.getNext();
-        while (true) {
-            if (temp == null) {
-                break;
-            }
+        while (temp != null) {
             if (temp.getId() == node.getId()) {
                 temp.setName(node.getName());
                 break;
@@ -64,6 +61,7 @@ public class SingleLinkedList {
         Node temp = first;
         while (temp.getNext() != null) {
             if (temp.getNext().getId() == no) {
+                //找到链表中需要删除元素的钱一个位置，指向到此位置的下一个的下一个位置 替换掉原来的指向
                 temp.setNext(temp.getNext().getNext());
                 break;
             }

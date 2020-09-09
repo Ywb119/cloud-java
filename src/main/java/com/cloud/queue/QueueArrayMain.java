@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 数组
  * 链表
  * <p>
- * 缺点：数组只能使用一次
+ * 环形队列
  */
 public class QueueArrayMain {
 
@@ -91,7 +91,7 @@ public class QueueArrayMain {
                 case 'g':
                     try {
                         int res = queue.get();
-                        System.out.printf("获取元素值为"+ res);
+                        System.out.printf("获取元素值为" + res);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
